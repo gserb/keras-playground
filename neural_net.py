@@ -16,6 +16,8 @@ model.add(Dense(1, activation='linear'))
 
 model.compile(optimizer='adam', loss='mean_squared_error')
 
+# model.summary()
+
 x_train =  np.array([
     [1, 2, 3, 4],
     [4, 6, 1, 2],
@@ -59,26 +61,38 @@ model.fit(
     x_train,
     y_train,
     batch_size=2,
-    epochs=1000,
+    epochs=100,
     verbose=1,
     validation_data=(x_val, y_val)
 )
 
-x_test = np.array([
-    [2, 5, 4.5, 1],
-    [9, 16, 11, 10.5],
-    [100, 95, 99, 102]
+x_predict = np.array([
+    [1.5, 2, 3.5, 4],
+    [13, 11, 9, 14],
+    [102, 98.5, 102.5, 100]
 ])
 
-y_test =  np.array([
-    [3.125],
-    [11.625],
-    [99.0]
-])
-
-output = model.evaluate(x_test, y_test)
+output = model.predict(x_predict)
 
 print("")
-print("=== Evaluation ===")
-print(model.metrics_names)
-print(output)
+print("Expected: 2.75, 11.75, 100.75")
+print("Actual: ", output)
+
+# x_test = np.array([
+#     [2, 5, 4.5, 1],
+#     [9, 16, 11, 10.5],
+#     [100, 95, 99, 102]
+# ])
+
+# y_test =  np.array([
+#     [3.125],
+#     [11.625],
+#     [99.0]
+# ])
+
+# output = model.evaluate(x_test, y_test)
+
+# print("")
+# print("=== Evaluation ===")
+# print(model.metrics_names)
+# print(output)
