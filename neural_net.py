@@ -45,11 +45,23 @@ perm = np.random.permutation(y_train.size)
 x_train = x_train[perm]
 y_train = y_train[perm]
 
+x_val = np.array([
+    [1.5, 4, 3, 2.5],
+    [10, 14, 11.5, 12],
+    [111, 99, 105, 107]
+])
+
+y_val = np.array([
+    [2.75],
+    [11.875],
+    [105.5]
+])
+
 model.fit(
     x_train,
     y_train,
     batch_size=2,
     epochs=100,
     verbose=1,
-    validation_split=0.2
+    validation_data=(x_val, y_val)
 )
