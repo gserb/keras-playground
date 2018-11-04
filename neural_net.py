@@ -7,6 +7,10 @@ model = Sequential()
 
 model.add(Dense(8, activation='relu', input_dim=4))
 model.add(Dense(16, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(16, activation='relu'))
 model.add(Dense(8, activation='relu'))
 model.add(Dense(1, activation='linear'))
 
@@ -55,7 +59,7 @@ model.fit(
     x_train,
     y_train,
     batch_size=2,
-    epochs=100,
+    epochs=1000,
     verbose=1,
     validation_data=(x_val, y_val)
 )
