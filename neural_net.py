@@ -68,6 +68,7 @@ model.fit(
 
 model.save('mean_network.h5')
 
+# Predict
 # x_predict = np.array([
 #     [1.5, 2, 3.5, 4],
 #     [13, 11, 9, 14],
@@ -80,6 +81,7 @@ model.save('mean_network.h5')
 # print("Expected: 2.75, 11.75, 100.75")
 # print("Actual: ", output)
 
+# Test
 # x_test = np.array([
 #     [2, 5, 4.5, 1],
 #     [9, 16, 11, 10.5],
