@@ -59,3 +59,22 @@ model.fit(
     verbose=1,
     validation_data=(x_val, y_val)
 )
+
+x_test = np.array([
+    [2, 5, 4.5, 1],
+    [9, 16, 11, 10.5],
+    [100, 95, 99, 102]
+])
+
+y_test =  np.array([
+    [3.125],
+    [11.625],
+    [99.0]
+])
+
+output = model.evaluate(x_test, y_test)
+
+print("")
+print("=== Evaluation ===")
+print(model.metrics_names)
+print(output)
