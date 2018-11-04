@@ -66,17 +66,19 @@ model.fit(
     validation_data=(x_val, y_val)
 )
 
-x_predict = np.array([
-    [1.5, 2, 3.5, 4],
-    [13, 11, 9, 14],
-    [102, 98.5, 102.5, 100]
-])
+model.save('mean_network.h5')
 
-output = model.predict(x_predict)
+# x_predict = np.array([
+#     [1.5, 2, 3.5, 4],
+#     [13, 11, 9, 14],
+#     [102, 98.5, 102.5, 100]
+# ])
 
-print("")
-print("Expected: 2.75, 11.75, 100.75")
-print("Actual: ", output)
+# output = model.predict(x_predict)
+
+# print("")
+# print("Expected: 2.75, 11.75, 100.75")
+# print("Actual: ", output)
 
 # x_test = np.array([
 #     [2, 5, 4.5, 1],
