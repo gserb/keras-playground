@@ -20,7 +20,7 @@ model.add(Dense(16, activation='relu'))
 model.add(Dense(8, activation='relu'))
 model.add(Dense(3, activation='softmax'))
 
-opt = Adam(lr=0.005,)
+opt = Adam(lr=0.005)
 
 model.compile(
     optimizer=opt, 
@@ -44,20 +44,31 @@ model.fit(
     validation_split=0.2
 )
 
-predict_data = np.array([
-    [4.9, 3.0, 1.5, 0.2], #0 Iris-setosa
-    [5.7, 3.0, 4.5, 1.2], #1 Iris-versicolor
-    [7.2, 3.2, 6.4, 2.3]  #2 Iris-virginica
-])
+model.optimizer =  Adam(lr=0.0001)
 
-output = model.predict(predict_data)
+model.fit(
+    x_train,
+    y_train,
+    epochs=100,
+    validation_split=0.2
+)
 
-np.set_printoptions(suppress=True)
+model.save('iris.h5')
 
-print("")
-print(output)
+# predict_data = np.array([
+#     [4.9, 3.0, 1.5, 0.2], #0 Iris-setosa
+#     [5.7, 3.0, 4.5, 1.2], #1 Iris-versicolor
+#     [7.2, 3.2, 6.4, 2.3]  #2 Iris-virginica
+# ])
 
-output = model.predict_classes(predict_data)
+# output = model.predict(predict_data)
 
-print("")
-print(output)
+# np.set_printoptions(suppress=True)
+
+# print("")
+# print(output)
+
+# output = model.predict_classes(predict_data)
+
+# print("")
+# print(output)
