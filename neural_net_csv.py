@@ -40,3 +40,12 @@ model.fit(
     epochs=100,
     validation_split=0.2
 )
+
+x_predict = np.array([
+    [10, 25, 14, 9],
+    [102, 100, 75, 90]
+])
+
+output = model.predict_classes(x_predict)
+print("")
+print(output)
