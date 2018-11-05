@@ -1,6 +1,7 @@
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.utils.np_utils import to_categorical
+from keras.optimizers import Adam
 
 import numpy as np
 
@@ -19,8 +20,10 @@ model.add(Dense(16, activation='relu'))
 model.add(Dense(8, activation='relu'))
 model.add(Dense(3, activation='softmax'))
 
+opt = Adam(lr=0.005,)
+
 model.compile(
-    optimizer='adam', 
+    optimizer=opt, 
     loss='categorical_crossentropy',
     metrics=['accuracy']
 )
